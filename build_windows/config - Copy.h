@@ -34,8 +34,8 @@
 
 #define CONFIGURED_ISAM   VBISAM        /* see possible values above */
 #define CONFIGURED_CURSES PDCURSES      /* see possible values above */
-#define CONFIGURED_XML    XML2          /* see possible values above */
-#define CONFIGURED_JSON   CJSON_CJSON   /* see possible values above */
+#define CONFIGURED_XML    NOXML         /* see possible values above */
+#define CONFIGURED_JSON   NOJSON        /* see possible values above */
 #define USED_MATHLIB      MATHLIB_MPIR  /* see possible values above */
 
 /* define if you want to use the fall-back to GetUserName
@@ -89,7 +89,7 @@
 #pragma comment(lib, LIB_ISAM)
 #else
 #if CONFIGURED_ISAM == VBISAM
-#pragma comment(lib, "vbisam")
+#pragma comment(lib, "libvbisam")
 #elif CONFIGURED_ISAM == DISAM
 #pragma comment(lib, "libdisam72")
 #elif CONFIGURED_ISAM == BDB
@@ -111,8 +111,8 @@
 #pragma comment(lib, "libz.dll.a")
 #else
 #pragma comment(lib, "libxml2")
-#pragma comment(lib, "charset")
-#pragma comment(lib, "iconv")
+#pragma comment(lib, "libcharset")
+#pragma comment(lib, "libiconv")
 #ifdef _DEBUG
 #pragma comment(lib, "zlibd")
 #else
