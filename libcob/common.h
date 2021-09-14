@@ -337,7 +337,9 @@ Note: also defined together with __clang__ in both frontends:
 
 #define strncasecmp		_strnicmp
 #define strcasecmp		_stricmp
+#if _MSC_VER < 1900
 #define snprintf		_snprintf
+#endif
 #define getpid			_getpid
 #define access			_access
 #define popen			_popen
